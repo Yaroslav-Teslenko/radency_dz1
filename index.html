@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="main.css" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <title>Radency DZ_1</title>
+  </head>
+  <body>
+    <div id="app">
+      <section class="main-section">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Created</th>
+              <th>Category</th>
+              <th>Content</th>
+              <th>Dates</th>
+              <th class="td-btn">.</th>
+              <th class="td-btn">.</th>
+              <th class="td-btn">.</th>
+            </tr>
+          </thead>
+          <tbody class="main-table"></tbody>
+        </table>
+
+        <div class="btn-container">
+          <div class="switch">
+            <label>
+              Show
+              <input type="checkbox" class="check-arhived" checked />
+              <span class="lever"></span>
+              Hide arhived
+            </label>
+          </div>
+
+          <button data-tooltip="Create" class="createBtn tooltipped btn-small btn">create record</button>
+        </div>
+      </section>
+      <section class="form-section hide">
+        <form name="addRecord">
+          <input type="text" name="name" id="name" class="form-control" placeholder="Record name" />
+          <input type="text" name="content" id="content" class="form-control mt-3" placeholder="Record content" />
+
+          <select class="categories-select" id="category"></select>
+
+          <div class="btn-container">
+            <button type="submit" class="saveBtn btn btn-primary mt-4">Save record</button>
+            <button type="button" class="closeBtn btn btn-primary mt-4">Close</button>
+          </div>
+        </form>
+      </section>
+      <section class="summary-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Note category</th>
+              <th>Active</th>
+              <th>Arhived</th>
+            </tr>
+          </thead>
+          <tbody class="summary-table"></tbody>
+        </table>
+      </section>
+      <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+    </div>
+    <script type="module" src="./data/categories.js"></script>
+    <script type="module" src="./data/data.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="./js/actions-app.js"></script>
+    <script type="module" src="./js/render-app.js"></script>
+  </body>
+</html>
